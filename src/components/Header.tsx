@@ -2,15 +2,15 @@ import React from "react";
 
 export const Header: React.FC = () => {
   return (
-    <header className="w-full flex justify-center pt-6 md:pt-6  mt-[-25px]">
+    <header className="w-full flex justify-center pt-6 md:pt-6  mt-[-25px] ">
       <div
         className="
-          w-[90%] md:w-[80%] 
-          bg-slate-300 border border-white/20 
-          rounded-b-full shadow-[0_18px_45px_rgba(15,23,42,0.25)]
+          w-[100%] md:w-[100%] 
+          bg-white border border-white/20 
+          shadow-[0_18px_45px_rgba(15,23,42,0.25)]
           backdrop-blur-xl 
           flex items-center justify-between
-          px-8 md:px-12 py-1.5 md:py-1.5
+          px-8 md:px-12 py-1.5 md:py-1.5 rounded-b-[20px]
         "
       >
         {/* Logo */}
@@ -20,7 +20,7 @@ export const Header: React.FC = () => {
               <img
             src="/logo.png"
             alt="ProFind logo"
-            className="h-11 w-auto object-contain bg-slate-300 p-2 rounded-full"
+            className="h-11 w-auto object-contain  p-2 rounded-full"
           />
           </div>
         </div>
@@ -48,7 +48,7 @@ export const Header: React.FC = () => {
               className="
                 text-xs md:text-sm font-medium
                 px-3 md:px-4 py-1.5 md:py-2 
-                rounded-full
+                rounded-full 
                 bg-red-500
                 text-white shadow-md
                 hover:shadow-lg hover:brightness-105

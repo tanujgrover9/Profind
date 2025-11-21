@@ -16,7 +16,7 @@ export const Hero: React.FC<HeroProps> = ({ onSearch }) => {
   };
 
   return (
-    <header className="relative overflow-hidden bg-[#09121e] text-white border-b border-slate-800 ">
+    <header className="relative overflow-hidden bg-[#3222be] text-white border-b border-slate-800 ">
       <Header />
 
       {/* Premium animated gradient lights */}
@@ -46,7 +46,7 @@ export const Hero: React.FC<HeroProps> = ({ onSearch }) => {
           {/* Heading */}
           <h1 className="text-5xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight">
             Land your next{" "}
-           <span className="relative inline-block font-bold px-2 py-0.5 border-2 border-red-500 rotate-6">
+           <span className="relative inline-block font-bold px-2 py-0.5 border-2 border-red-500 rotate-6 rounded-full ">
   remote
 </span>
 
@@ -61,7 +61,7 @@ export const Hero: React.FC<HeroProps> = ({ onSearch }) => {
       inline-block ml-3 px-4 py-1
       bg-yellow-300 text-black font-bold
       rotate-[-5deg]
-      shadow-[0_4px_10px_rgba(0,0,0,0.15)]
+      shadow-[0_4px_10px_rgba(0,0,0,0.15)] rounded-full 
     "
             >
               faster
@@ -77,16 +77,16 @@ export const Hero: React.FC<HeroProps> = ({ onSearch }) => {
           {/* Search form */}
           <form
             onSubmit={handleSubmit}
-            className="p-4 sm:p-5 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.4)] space-y-5"
+            className="p-4 sm:p-5   backdrop-blur-xl   space-y-5"
           >
             <div className="flex flex-col gap-4 md:flex-row">
               {/* Keyword */}
-              <div className="flex-1 group rounded-xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur focus-within:border-indigo-500 transition">
+              <div className="flex-1 group rounded-full   border border-white/10 bg-white px-4 py-3 backdrop-blur focus-within:border-indigo-500 transition">
                 <div className="flex items-center gap-3">
                   <FiSearch className="text-slate-300 text-lg" />
                   <input
                     type="text"
-                    className="w-full bg-transparent text-sm text-white placeholder:text-slate-400 outline-none"
+                    className="w-full bg-transparent text-sm text-black placeholder:text-slate-900 outline-none"
                     placeholder="Job title, skill, or company"
                     value={keyword}
                     onChange={(e) => setKeyword(e.target.value)}
@@ -95,12 +95,12 @@ export const Hero: React.FC<HeroProps> = ({ onSearch }) => {
               </div>
 
               {/* Location */}
-              <div className="md:w-64 group rounded-xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur focus-within:border-indigo-500 transition">
+              <div className="md:w-64 group rounded-full   border border-white/10 bg-white px-4 py-3 backdrop-blur focus-within:border-indigo-500 transition">
                 <div className="flex items-center gap-3">
                   <FiMapPin className="text-slate-300 text-lg" />
                   <input
                     type="text"
-                    className="w-full bg-transparent text-sm text-white placeholder:text-slate-400 outline-none"
+                    className="w-full bg-transparent text-sm text-black placeholder:text-slate-900 outline-none"
                     placeholder="Remote, Worldwide, Europe, etc."
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
@@ -111,7 +111,7 @@ export const Hero: React.FC<HeroProps> = ({ onSearch }) => {
               {/* Button */}
               <button
                 type="submit"
-                className="md:w-auto w-full rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-400 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:scale-[1.02] transition-all"
+                className="md:w-auto w-full rounded-full   bg-blue-500 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:scale-[1.02] transition-all"
               >
                 Find Remote Jobs
               </button>
