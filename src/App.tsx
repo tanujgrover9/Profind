@@ -170,10 +170,12 @@ const App: React.FC = () => {
           <aside className="flex flex-col gap-4">
             <ResumeAssistant resume={resume} onResumeChange={setResume} />
             <JobDetailPanel
-              job={selectedJob}
-              savedJobs={savedJobs}
-              onToggleSave={toggleSaveJob}
-            />
+  job={selectedJob}
+  savedJobs={savedJobs}
+  onToggleSave={toggleSaveJob}
+  resume={resume} 
+/>
+
           </aside>
         </div>
       </main>
