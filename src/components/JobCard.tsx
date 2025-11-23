@@ -117,7 +117,7 @@ export const JobCard: React.FC<Props> = ({
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="text-[11px] px-3 py-2 w-full md:w-auto text-center bg-indigo-600 text-white hover:bg-indigo-500 shadow-sm transition"
+            className="text-[11px] px-3 py-2 w-full md:w-auto text-center bg-blue-500 text-white hover:bg-indigo-500 shadow-sm transition"
           >
             Apply 
           </a>
