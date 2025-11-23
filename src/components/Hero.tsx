@@ -140,7 +140,7 @@ export const Hero: React.FC<HeroProps> = ({ onSearch }) => {
         {/* Text block */}
         <div className="max-w-3xl mx-auto text-center mb-8">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500 mb-3">
-            SMART JOB MATCHING
+           ✧AI SMART JOB MATCHING
           </p>
 
           <h1 className="text-4xl sm:text-5xl font-semibold leading-tight tracking-tight mb-4">
