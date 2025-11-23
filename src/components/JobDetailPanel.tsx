@@ -37,7 +37,7 @@ export const JobDetailPanel: React.FC<Props> = ({
   };
 
   return (
-    <section className="bg-white shadow-md border border-slate-100 px-6 py-5 max-h-[950px] overflow-y-auto custom-scroll">
+    <section className="bg-white shadow-md border border-slate-100 px-6 py-5 max-h-[1150px] overflow-y-auto custom-scroll">
       {/* 🔥 AI Resume Advisor */}
       <div className="mb-6">
         <AiResumeAdvisor job={job} resume={resume} />

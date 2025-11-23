@@ -1,5 +1,32 @@
 import React, { useState } from "react";
 import { FiSearch, FiMapPin } from "react-icons/fi";
+import {
+  SiGoogle,
+  SiNetflix,
+  SiMeta,
+  SiAmazon,
+  SiAdobe,
+  SiApple,
+  SiAirbnb,
+  SiUber,
+  SiOracle,
+  SiSalesforce,
+  SiSpotify,
+  SiStripe,
+  SiShopify,
+  SiDell,
+  SiIntel,
+  SiSlack,
+  SiAccenture,
+  SiCisco,
+  SiSiemens,
+  SiTesla,
+  SiX,
+  SiZoom,
+  SiLinkedin,
+  SiAtlassian,
+} from "react-icons/si";
+
 import { Header } from "./Header";
 
 interface HeroProps {
@@ -15,13 +42,63 @@ export const Hero: React.FC<HeroProps> = ({ onSearch }) => {
     onSearch(keyword.trim(), location.trim());
   };
 
+  // ✨ Icon list (use components, not JSX instances)
+ const companyIcons = [
+  { id: "google", Icon: SiGoogle },
+  { id: "netflix", Icon: SiNetflix },
+  { id: "meta", Icon: SiMeta },
+  { id: "amazon", Icon: SiAmazon },
+  { id: "adobe", Icon: SiAdobe },
+  { id: "apple", Icon: SiApple },
+  { id: "airbnb", Icon: SiAirbnb },
+  { id: "uber", Icon: SiUber },
+  { id: "oracle", Icon: SiOracle },
+  { id: "salesforce", Icon: SiSalesforce },
+  { id: "spotify", Icon: SiSpotify },
+  { id: "stripe", Icon: SiStripe },
+  { id: "shopify", Icon: SiShopify },
+  { id: "dell", Icon: SiDell },
+  { id: "intel", Icon: SiIntel },
+  { id: "slack", Icon: SiSlack },
+  { id: "accenture", Icon: SiAccenture },
+  { id: "cisco", Icon: SiCisco },
+  { id: "siemens", Icon: SiSiemens },
+  { id: "tesla", Icon: SiTesla },
+  { id: "twitter", Icon: SiX },
+  { id: "zoom", Icon: SiZoom },
+  { id: "linkedin", Icon: SiLinkedin },
+  { id: "atlassian", Icon: SiAtlassian },
+
+  // 🔁 Duplicate for seamless scrolling
+  { id: "google2", Icon: SiGoogle },
+  { id: "netflix2", Icon: SiNetflix },
+  { id: "meta2", Icon: SiMeta },
+  { id: "amazon2", Icon: SiAmazon },
+  { id: "adobe2", Icon: SiAdobe },
+  { id: "apple2", Icon: SiApple },
+  { id: "airbnb2", Icon: SiAirbnb },
+  { id: "uber2", Icon: SiUber },
+  { id: "oracle2", Icon: SiOracle },
+  { id: "salesforce2", Icon: SiSalesforce },
+  { id: "spotify2", Icon: SiSpotify },
+  { id: "stripe2", Icon: SiStripe },
+  { id: "shopify2", Icon: SiShopify },
+  { id: "dell2", Icon: SiDell },
+  { id: "intel2", Icon: SiIntel },
+  { id: "slack2", Icon: SiSlack },
+  { id: "accenture2", Icon: SiAccenture },
+  { id: "cisco2", Icon: SiCisco },
+  { id: "siemens2", Icon: SiSiemens },
+  { id: "tesla2", Icon: SiTesla },
+  { id: "twitter2", Icon: SiX },
+  { id: "zoom2", Icon: SiZoom },
+  { id: "linkedin2", Icon: SiLinkedin },
+  { id: "atlassian2", Icon: SiAtlassian },
+];
+
+
   return (
-    <header
-      className="
-        relative overflow-hidden 
-        text-slate-900
-      "
-    >
+    <header className="relative overflow-hidden text-slate-900">
       {/* GRID BACKGROUND */}
       <div className="pointer-events-none absolute -inset-40 -z-10">
         <div
@@ -37,6 +114,28 @@ export const Hero: React.FC<HeroProps> = ({ onSearch }) => {
 
       <Header />
 
+      {/* 🔥 Infinite Marquee using react-icons */}
+      <div className="w-full overflow-hidden border-y border-slate-200 bg-white/80 backdrop-blur-sm">
+        <div className="flex min-w-max items-center py-2 animate-marquee whitespace-nowrap">
+          {/* duplicate the row twice for seamless loop */}
+          {[...Array(2)].map((_, loopIndex) => (
+            <div
+              key={loopIndex}
+              className="flex items-center gap-10 px-6 md:px-10"
+            >
+              {companyIcons.map(({ id, Icon }) => (
+                <div
+                  key={`${id}-${loopIndex}`}
+                  className="flex items-center justify-center text-2xl text-slate-400 hover:text-slate-900 transition"
+                >
+                  <Icon />
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 md:px-8 py-12 lg:py-16">
         {/* Text block */}
         <div className="max-w-3xl mx-auto text-center mb-8">
@@ -49,8 +148,7 @@ export const Hero: React.FC<HeroProps> = ({ onSearch }) => {
             <span
               className="
                 inline-block px-3 py-1
-               
-                bg-sky-100 text-sky-700
+                bg-blue-500 text-white
                 border border-sky-200
                 rotate-6
               "
@@ -70,7 +168,7 @@ export const Hero: React.FC<HeroProps> = ({ onSearch }) => {
         <div
           className="
             max-w-3xl mx-auto
-             border border-slate-200 bg-white/80
+            border border-slate-200 bg-white/80
             shadow-[0_18px_45px_rgba(15,23,42,0.06)]
             backdrop-blur
           "
@@ -92,7 +190,7 @@ export const Hero: React.FC<HeroProps> = ({ onSearch }) => {
               </div>
 
               {/* Location */}
-              <div className="md:w-64  border border-slate-200 bg-white px-4 py-3 focus-within:border-sky-400 focus-within:ring-1 focus-within:ring-sky-200 transition">
+              <div className="md:w-64 border border-slate-200 bg-white px-4 py-3 focus-within:border-sky-400 focus-within:ring-1 focus-within:ring-sky-200 transition">
                 <div className="flex items-center gap-3">
                   <FiMapPin className="text-slate-400 text-lg" />
                   <input

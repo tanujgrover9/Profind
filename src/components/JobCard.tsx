@@ -2,6 +2,8 @@ import React from "react";
 import type { Job } from "../types";
 import { Bookmark, BookmarkCheck } from "lucide-react";
 import { CompanyLogo } from "./CompanyLogo";
+import { FiMapPin, FiBriefcase, FiCompass, FiDollarSign } from "react-icons/fi";
+
 
 interface Props {
   job: Job & { _matchScore?: number; _matchLabel?: "Low" | "Medium" | "High" | null };
@@ -47,16 +49,26 @@ export const JobCard: React.FC<Props> = ({
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-2 text-[11px] text-slate-600 mb-3">
-            <span className="px-2 py-1 bg-slate-100">📍 {job.location}</span>
-            <span className="px-2 py-1 bg-slate-100">💼 {job.jobType}</span>
-            <span className="px-2 py-1 bg-slate-100">🧭 {job.workMode}</span>
-            {job.salaryMin && (
-              <span className="px-2 py-1 bg-slate-100">
-                💰 {job.currency} {job.salaryMin.toLocaleString()} - {job.salaryMax?.toLocaleString()}
-              </span>
-            )}
-          </div>
+         <div className="flex flex-wrap gap-2 text-[11px] text-slate-600 mb-3">
+  <span className="px-2 py-1 flex items-center gap-1 bg-slate-100 rounded">
+    <FiMapPin size={12} /> {job.location}
+  </span>
+
+  <span className="px-2 py-1 flex items-center gap-1 bg-slate-100 rounded">
+    <FiBriefcase size={12} /> {job.jobType}
+  </span>
+
+  <span className="px-2 py-1 flex items-center gap-1 bg-slate-100 rounded">
+    <FiCompass size={12} /> {job.workMode}
+  </span>
+
+  {job.salaryMin && (
+    <span className="px-2 py-1 flex items-center gap-1 bg-slate-100 rounded">
+      <FiDollarSign size={12} /> {job.currency} {job.salaryMin.toLocaleString()} – {job.salaryMax?.toLocaleString()}
+    </span>
+  )}
+</div>
+
 
           <div className="flex flex-wrap gap-1.5 mb-3">
             {job.skills.slice(0, 5).map((s) => (
